@@ -5,8 +5,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn visitekaartje</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header>
+        <button></button>
+    </header>
+    <main>
+        <div>
+            <section>
+                <img src="img/avatar.jpeg" alt="Foto van mij">
+                <h1>Ine van den Hoven</h1>
+                <ul>
+                    <li>
+                        <a href="mailto:inevdhoven@gmail.com">inevdhoven@gmail.com</a>
+                    </li>
+                    <li>
+                        <a href="tel:+31623756621">+31 6 23756621</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/inevandenhoven/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" fill="none" d="M19.34 22H4.66C3.19 22 2 20.81 2 19.34V4.66C2 3.19 3.19 2 4.66 2H19.33C20.81 2 22 3.19 22 4.66V19.33C22 20.81 20.81 22 19.34 22Z"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" fill="none" d="M16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12Z"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" fill="none" d="M19 5.5C19 5.78 18.78 6 18.5 6C18.22 6 18 5.78 18 5.5C18 5.22 18.22 5 18.5 5C18.78 5 19 5.22 19 5.5Z"></path>
+                            </svg>
+                            <span>Ga naar Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ine-van-den-hoven-2247a8160/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" fill="none" d="M19.34 22H4.66C3.19 22 2 20.81 2 19.34V4.66C2 3.19 3.19 2 4.66 2H19.33C20.81 2 22 3.19 22 4.66V19.33C22 20.81 20.81 22 19.34 22Z"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" d="M7 10V17"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" d="M17 17C17 17 17 12.45 17 12.44C17 11.87 17.03 11.21 16.76 10.69C16.16 9.51 14.57 10.11 13.72 10.6C12.84 11.1 12.04 11.74 11.28 12.4C11.19 12.48 11.09 12.57 11 12.65V10.01V17"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" fill="none" d="M7 7C7.27614 7 7.5 6.77614 7.5 6.5C7.5 6.22386 7.27614 6 7 6C6.72386 6 6.5 6.22386 6.5 6.5C6.5 6.77614 6.72386 7 7 7Z"></path>
+                            </svg>
+                            <span>Ga naar LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link" href="http://inevandenhoven.nl/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" d="M17.78 11.74L20.86 8.66C21.62 7.9 22 6.9 22 5.9C22 4.9 21.62 3.9 20.86 3.14C19.33 1.62 16.87 1.62 15.34 3.14L11.76 6.73L10.96 7.53L10.25 8.24C9.47998 9 9.09998 10 9.09998 11C9.09998 11.22 9.11997 11.43 9.14997 11.64C9.15997 11.65 9.15998 11.67 9.15998 11.69C9.19998 11.89 9.24997 12.08 9.31997 12.27C9.49997 12.81 9.80998 13.32 10.25 13.75C10.47 13.97 10.71 14.16 10.96 14.31"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#252525" d="M6.22 12.26L3.14 15.34C2.38 16.1 2 17.1 2 18.1C2 19.1 2.38 20.1 3.14 20.86C4.67 22.38 7.13 22.38 8.66 20.86L12.24 17.27L13.04 16.47L13.75 15.76C14.52 15 14.9 14 14.9 13C14.9 12.78 14.88 12.57 14.85 12.36C14.84 12.35 14.84 12.33 14.84 12.31C14.8 12.11 14.75 11.92 14.68 11.73C14.5 11.19 14.19 10.68 13.75 10.25C13.53 10.03 13.29 9.84 13.04 9.69"></path>
+                            </svg>
+                            <span>Ga naar inevandenhoven.nl</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Over mij</h2>
+                <p>Hoii, ik ben Ine en ik volg de opleiding Communication and Multimedia Design aan de HvA. Daarvoor heb ik de opleiding Interactieve Vormgeving gedaan aan het Grafisch Lyceum Utrecht.</p>
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/inevandenhoven/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" fill="none" d="M19.34 22H4.66C3.19 22 2 20.81 2 19.34V4.66C2 3.19 3.19 2 4.66 2H19.33C20.81 2 22 3.19 22 4.66V19.33C22 20.81 20.81 22 19.34 22Z"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" fill="none" d="M16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12Z"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" fill="none" d="M19 5.5C19 5.78 18.78 6 18.5 6C18.22 6 18 5.78 18 5.5C18 5.22 18.22 5 18.5 5C18.78 5 19 5.22 19 5.5Z"></path>
+                            </svg>
+                            <span>Ga naar Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ine-van-den-hoven-2247a8160/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" fill="none" d="M19.34 22H4.66C3.19 22 2 20.81 2 19.34V4.66C2 3.19 3.19 2 4.66 2H19.33C20.81 2 22 3.19 22 4.66V19.33C22 20.81 20.81 22 19.34 22Z"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" d="M7 10V17"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" d="M17 17C17 17 17 12.45 17 12.44C17 11.87 17.03 11.21 16.76 10.69C16.16 9.51 14.57 10.11 13.72 10.6C12.84 11.1 12.04 11.74 11.28 12.4C11.19 12.48 11.09 12.57 11 12.65V10.01V17"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" fill="none" d="M7 7C7.27614 7 7.5 6.77614 7.5 6.5C7.5 6.22386 7.27614 6 7 6C6.72386 6 6.5 6.22386 6.5 6.5C6.5 6.77614 6.72386 7 7 7Z"></path>
+                            </svg>
+                            <span>Ga naar LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link" href="http://inevandenhoven.nl/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-reactroot="">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" d="M17.78 11.74L20.86 8.66C21.62 7.9 22 6.9 22 5.9C22 4.9 21.62 3.9 20.86 3.14C19.33 1.62 16.87 1.62 15.34 3.14L11.76 6.73L10.96 7.53L10.25 8.24C9.47998 9 9.09998 10 9.09998 11C9.09998 11.22 9.11997 11.43 9.14997 11.64C9.15997 11.65 9.15998 11.67 9.15998 11.69C9.19998 11.89 9.24997 12.08 9.31997 12.27C9.49997 12.81 9.80998 13.32 10.25 13.75C10.47 13.97 10.71 14.16 10.96 14.31"></path>
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1" stroke="#d81960" d="M6.22 12.26L3.14 15.34C2.38 16.1 2 17.1 2 18.1C2 19.1 2.38 20.1 3.14 20.86C4.67 22.38 7.13 22.38 8.66 20.86L12.24 17.27L13.04 16.47L13.75 15.76C14.52 15 14.9 14 14.9 13C14.9 12.78 14.88 12.57 14.85 12.36C14.84 12.35 14.84 12.33 14.84 12.31C14.8 12.11 14.75 11.92 14.68 11.73C14.5 11.19 14.19 10.68 13.75 10.25C13.53 10.03 13.29 9.84 13.04 9.69"></path>
+                            </svg>
+                            <span>Ga naar inevandenhoven.nl</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script defer src="js/script.js"></script>
 </body>
 </html>
