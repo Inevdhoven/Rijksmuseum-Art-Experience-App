@@ -2,9 +2,11 @@
 const h1 = document.querySelector("h1");
 const linkWebsite = document.querySelector(".link")
 const frontCard = document.querySelector("main div section:first-of-type")
+const front = document.querySelector("main div section.front")
 const backCard = document.querySelector("main div section:nth-of-type(2)")
 const aboutMe = document.querySelector("main div section:nth-of-type(2) p")
 const image = document.querySelector("main section:first-of-type img")
+const button = document.querySelector("header button");
 
 // Logica
 fetchData()
@@ -37,6 +39,7 @@ function addData(data) {
 }
 
 frontCard.addEventListener('click', function() {
+    front.classList.remove('front') 
     frontCard.classList.add('flip')
     backCard.classList.add('showback')
 })
@@ -44,4 +47,22 @@ frontCard.addEventListener('click', function() {
 backCard.addEventListener('click', function() {
     frontCard.classList.remove('flip')
     backCard.classList.remove('showback')
+    front.classList.add('front')
 })
+
+button.addEventListener('click', function() {
+    frontCard.classList.toggle('flip')
+    backCard.classList.toggle('showback')
+
+    if (front.classList.contains('front')) {
+        front.classList.remove('front')
+        button.classList.add('code')
+        console.log('waar');
+    } else {
+        console.log('nietwaar')
+        front.classList.add('front')
+        button.classList.remove('code')
+    }
+})
+
+
