@@ -35,7 +35,7 @@ back.addEventListener("click", function() {
 })
 
 cardCasper.addEventListener("click", function() {
-    back.src = "../img/ine7.jpg"
+    back.src = "https://casperdennijs.github.io/visitekaartje/"
     front.classList.add('flip')
     back.classList.add('back')
 })
