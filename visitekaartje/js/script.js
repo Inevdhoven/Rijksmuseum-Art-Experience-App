@@ -1,6 +1,7 @@
 // Variabelen
 const h1 = document.querySelector("h1");
 const linkWebsite = document.querySelector(".link")
+const github = document.querySelector(".github")
 const frontCard = document.querySelector("main div section:first-of-type")
 const front = document.querySelector("main div section.front")
 const backCard = document.querySelector("main div section:nth-of-type(2)")
@@ -29,13 +30,15 @@ function addData(data) {
     const website = data.member.website
     const text = data.member.bio.html
     const img = data.member.avatar
+    const handle = data.member.gitHubHandle
 
     h1.textContent = name + prefix + ' ' + surname
     linkWebsite.href = website
     aboutMe.innerHTML = text
     image.src = img
+    github.href = "https://github.com/" + handle
 
-    console.log(text)
+    console.log(github.href)
 }
 
 frontCard.addEventListener('click', function() {
