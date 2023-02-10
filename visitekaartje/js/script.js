@@ -37,8 +37,6 @@ function addData(data) {
     aboutMe.innerHTML = text
     image.src = img
     github.href = "https://github.com/" + handle
-
-    console.log(github.href)
 }
 
 frontCard.addEventListener('click', function() {
@@ -60,9 +58,7 @@ button.addEventListener('click', function() {
     if (front.classList.contains('front')) {
         front.classList.remove('front')
         button.classList.add('code')
-        console.log('waar');
     } else {
-        console.log('nietwaar')
         front.classList.add('front')
         button.classList.remove('code')
     }
