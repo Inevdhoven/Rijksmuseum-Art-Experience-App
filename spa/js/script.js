@@ -14,9 +14,9 @@ async function fetchData() {
 function getData(data) {
     const top10 = data.artObjects.slice(0, 10);
     const imgURLs = top10.map(artObject => artObject.webImage.url);
-    const titles = top10.map(artObject => artObject.title);
+    // const titles = top10.map(artObject => artObject.title);
     const topPieces = document.querySelector('main section:first-of-type section:nth-of-type(2) ul')
-    const topPiecesLi = document.createElement('li')
+    // const topPiecesLi = document.createElement('li')
     
     console.log(data)
 
