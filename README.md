@@ -16,7 +16,7 @@ _Alle projecten in deze map zijn gedurende de Minor Web Design & Development gem
 
 ## Mijn proces
 
-Mijn hele proces kun je vinden [hier](https://smooth-freeze-4ae.notion.site/Web-App-From-Scratch-a8473f4f91ad45a18fd38bfde067b336) vinden.
+Mijn hele proces kun je [hier](https://smooth-freeze-4ae.notion.site/Web-App-From-Scratch-a8473f4f91ad45a18fd38bfde067b336) vinden.
 
 ## Hoe installeer je de Rijksmuseum Art Experience
 
