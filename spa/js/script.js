@@ -4,36 +4,29 @@ const urlAPI = `https://www.rijksmuseum.nl/api/nl/collection?key=${keyAPI}&ps=10
 
 // Functions
 async function fetchData() {
-    const data = await fetch(urlAPI)
-    .then(response => response.json())
-    .then(data => {
-        getData(data)
+    const data = await fetch(urlAPI) // Data wordt opgehaald uit de API
+    .then(response => response.json()) // Data wordt omgezet naar JSON
+    .then(data => { 
+        top10(data) // data wordt doorgegeven aan de functie top10
     })
 }
 
-function getData(data) {
-    const top10 = data.artObjects.slice(0, 10);
-    const imgURLs = top10.map(artObject => artObject.webImage.url);
-    // const titles = top10.map(artObject => artObject.title);
-    const topPieces = document.querySelector('main section:first-of-type section:nth-of-type(2) ul')
-    // const topPiecesLi = document.createElement('li')
-    
-    console.log(data)
+function top10(data) { // De functie top10 wordt aangemaakt en krijgt de data mee
+    const top10 = data.artObjects.map(artObject => artObject).slice(0, 10) // De eerste 10 objecten worden opgehaald uit de api
+    const ulTop10 = document.querySelector('main section:first-of-type section:nth-of-type(2) ul') // De ul wordt geselecteerd
 
-    imgURLs.forEach((imgURL, title) => {
-        const topPiecesLi = document.createElement('li')
-        const topPiecesImg = document.createElement('img')
-        const topPiecesH3 = document.createElement('h3')
-
-        topPiecesImg.src = imgURL
-        topPiecesLi.appendChild(topPiecesImg)
-        topPieces.appendChild(topPiecesLi)
-
-        topPiecesH3.textContent = top10[title].title
-        topPiecesLi.appendChild(topPiecesH3)
-
-        topPiecesImg.alt = top10[title].title
-    });
+    top10.map((artObject, index) => { // De 10 objecten worden doorlopen
+        // De data wordt in de ul gezet 
+        ulTop10.insertAdjacentHTML( 
+            'afterbegin', 
+            `<li>
+                <a href="">
+                    <img src="${artObject.webImage.url}" alt="${artObject.title}">
+                    <h3>${artObject.title}</h3>
+                </a>
+            </li>`
+        )
+    })
 }
 
 // Logica
