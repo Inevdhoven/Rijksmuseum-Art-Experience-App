@@ -18,6 +18,7 @@
     --black: hsl(0, 0%, 12%);
     --white: hsl(0, 0%, 100%);
     --gradient: linear-gradient(108.46deg, rgba(255, 255, 255, 0.264) 0%, rgba(255, 255, 255, 0.066) 100%);
+    --gradient-dark: linear-gradient(108.46deg, rgba(31, 31, 31, 0.5) 0%, rgba(31, 31, 31, 0.15) 100%);
     --blur: blur(0.625rem);
 }
 
@@ -34,10 +35,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.75rem;
     font-family: PannoText;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
+    text-shadow: 0px 6px 25px rgba(30, 30, 30, 0.3);
 }
 
 p, li {
@@ -58,6 +60,14 @@ img {
 header {
     position: sticky;
     top: 0;
+    z-index: 1;
+
+    background-color: transparent;
+    transition: background-color 250ms ease;
+}
+
+header.scroll {
+    background-color: var(--black);
 }
 
 /* NAVIGATION */
@@ -84,19 +94,23 @@ main section section {
     padding: 1.5rem 1.5rem;
 }
 
+main section section:first-of-type {
+    padding: 0 1.5rem;
+}
+
 /* HERO */
 main section:first-of-type section:first-of-type {
-    margin-top: 25vh;
+    margin-top: 40vh;
 }
 
 main section section:first-of-type h1 {
     font-size: 3rem;
     text-transform: uppercase;
-    line-height: 1.25;
+    line-height: 1.1;
 }
 
 main section:first-of-type section:first-of-type img {
-    height: 70vh;
+    height: 90vh;
     object-fit: cover;
     position: absolute;
     inset: 0;
@@ -121,10 +135,6 @@ main section:nth-of-type(2) ul {
 main section:nth-of-type(2) ul li {
     scroll-snap-align: start;
 }
-
-/* main section:nth-of-type(2) ul li:last-of-type {
-    margin-right: 1.5rem;
-} */
 
 main section:nth-of-type(2) ul li a {
     display: block;
@@ -151,12 +161,16 @@ main section:nth-of-type(2) ul li a h3 {
     text-align: center;
     text-transform: uppercase;
     line-height: 1.25;
-    background: var(--gradient);
+    background: var(--gradient-dark);
     backdrop-filter: var(--blur);
     border-radius: 0.3125rem;
 }
 
 /* CATAGORIES */
+main section:first-of-type section:nth-of-type(3) {
+    padding-bottom: 3em;
+}
+
 main section:first-of-type section:nth-of-type(3) h2 {
     text-align: center;
 }
@@ -174,4 +188,77 @@ main section:first-of-type section:nth-of-type(3) ul li {
     background: var(--gradient);
     backdrop-filter: var(--blur);
     border-radius: 0.3125rem;
+}
+
+main section:first-of-type section:nth-of-type(3) ul li a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* CATEGORY */
+.category {
+    padding: 1.5rem 1.5rem;
+}
+
+.category h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* UI-STACK */
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    visibility: hidden;
+
+    background: var(--black);
+}
+
+.loader.display {
+    visibility: visible;
+}
+
+/* Inspo css for loader from https://jsfiddle.net/L8ejy3cp/ */
+.loader svg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 102;
+    
+}
+
+.loader svg:first-of-type {
+    stroke-width: 0.2em;
+    z-index: 104;
+}
+
+.loader svg:nth-of-type(2) {
+    stroke: none;
+    fill: var(--white);
+}
+
+.loader span {
+    position: absolute;
+    right: 0;
+    top:0;
+    z-index: 103;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+	animation: loader 3s ease-in-out alternate;
+}
+
+@keyframes loader {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
 }
