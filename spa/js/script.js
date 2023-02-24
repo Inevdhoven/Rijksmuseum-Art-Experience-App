@@ -7,9 +7,9 @@ import { artists } from "./modules/categories.js"
 let globalData;
 
 // Eventlisteners
-window.addEventListener('hashchange', function () {
-    onRouteChanged(globalData); // De functie onRouteChanged wordt aangeroepen en de globalData wordt meegegeven
-}, false);
+// window.addEventListener('hashchange', function () {
+    // onRouteChanged(globalData); // De functie onRouteChanged wordt aangeroepen en de globalData wordt meegegeven
+// }, false);
 
 // Source for scroll: https://ryfarlane.com/article/get-scroll-position-vanilla-javascript
 window.addEventListener('scroll', function() {
@@ -22,8 +22,17 @@ window.addEventListener('scroll', function() {
     }
 });
 
-displayLoader() // De loader wordt getoond
-dataDisplay();
+// window.addEventListener('hashchange', () => {
+//     if(location.hash === `#${link}`){
+//         console.log('HALLO')
+//     }
+// }, false)
+// emptyState()
+displayLoader(); // De loader wordt getoond
+
+dataDisplay().then((result) => {
+    onRouteChanged(result);
+}); 
 
 async function dataDisplay () {
 
@@ -35,9 +44,9 @@ async function dataDisplay () {
         // console.log(data);
 
         globalData = data;
-        hideLoader() // De loader wordt verborgen
-        hero(data) // data wordt doorgegeven aan de functie hero
-        top10(data) // data wordt doorgegeven aan de functie top10
+        // hideLoader() // De loader wordt verborgen
+        // hero(data) // data wordt doorgegeven aan de functie hero
+        // top10(data) // data wordt doorgegeven aan de functie top10
             //artists(data) // data wordt doorgegeven aan de functie artists
         // .then(data => {
         //     console.log('DONE?');
@@ -49,6 +58,7 @@ async function dataDisplay () {
         //     //artists(data) // data wordt doorgegeven aan de functie artists
         // })
         
+        return data;
     // Error handling
     } catch (error) {
         console.log(error);
