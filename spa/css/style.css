@@ -201,9 +201,9 @@ main section:first-of-type section:nth-of-type(3) ul li a {
 }
 
 /* CATEGORY */
-.category {
+/* .category {
     padding: 1.5rem 1.5rem;
-}
+} */
 
 .category h1 {
     font-size: 3rem;
