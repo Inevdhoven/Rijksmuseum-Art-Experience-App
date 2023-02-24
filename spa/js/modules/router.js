@@ -1,98 +1,152 @@
 import '../library/routie.js';
+import { search } from './search.js';
+import { artists, listJars, listFurniture } from './categories.js';
+import { fetchData } from './data.js';
 
-export function onRouteChanged() {
+export function onRouteChanged(data) {
     const routerView = document.querySelector('main');
 
     routie({
         '': function() {
             console.log('Er is iets fout gegaan')
         },
+        'search': function() {
+            console.log('search')
+            routerView.innerHTML = 
+            `<section class="search">
+                ` + search() + `
+            </section>`
+        },
         'artists': function() {
-            console.log('artists')
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Kunstenaars</h1>
+                <ul>
+                    `+ artists(data) +`
+                </ul>
             </section>`
         },
-        'jars': function() {
-            console.log('jars')
+        'pot': async function() {
+
+            const result = await fetchData('pot');
+            const jarList = listJars(result);
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Potten</h1>
+                <ul>
+                    `+ jarList +`
+                </ul>
             </section>`
         },
-        'furniture': function() {
-            console.log('furniture')
+        'meubels': async function() {
+            
+            const result = await fetchData('', '', 'meubels') 
+            const furnitureList = listFurniture(result);
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Meubels</h1>
+                <ul>
+                    `+ furnitureList +`
+                </ul>
             </section>`
         },
-        'photos': function() {
+        'foto': function() {
             console.log('photos')
+
+            fetchData('foto')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Foto's</h1>
             </section>`
         },
-        'paintings': function() {
+        'schilderij': function() {
             console.log('painting')
+
+            fetchData('schilderij')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Schilderijen</h1>
             </section>`
         },
-        'sculptures': function() {
+        'beeldhouwwerk': function() {
             console.log('sculptures')
+
+            fetchData('beeldhouwwerk')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Beeldhouwwerk</h1>
             </section>`
         },
-        'porcelain': function() {
+        'porselein': function() {
             console.log('porcelain')
+
+            fetchData('porselein')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Porselein</h1>
             </section>`
         },
-        'wood': function() {
+        'hout': function() {
             console.log('wood')
+
+            fetchData('hout')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Hout</h1>
             </section>`
         },
-        'oilpaint': function() {
+        'olieverf': function() {
             console.log('oilpaint')
+
+            fetchData('olieverf')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Olieverf</h1>
             </section>`
         },
-        'gold': function() {
+        'goud': function() {
             console.log('gold')
+
+            fetchData('goud')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Goud</h1>
             </section>`
         },
-        'diamond': function() {
+        'diamant': function() {
             console.log('diamond')
+
+            fetchData('diamant')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Diamant</h1>
             </section>`
         },
-        'iron': function() {
+        'ijzer': function() {
             console.log('iron')
+
+            fetchData('ijzer')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Ijzer</h1>
             </section>`
         },
-        'paper': function() {
+        'papier': function() {
             console.log('paper')
+
+            fetchData('papier')
+
             routerView.innerHTML = 
             `<section class="category">
                 <h1>Papier</h1>
