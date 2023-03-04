@@ -4,6 +4,11 @@ export function search(data) {
 
         return `<input type="text" list="searchitems" placeholder="Zoeken...">
          <datalist id="searchitems">
-            <option value="test"></option>
+            <option value="Rembrandt van Rijn"></option>
+            <option value="Johannes Vermeer"></option>
+            <option value="Jacob Isaacksz van Ruisdael"></option>
+            <option value="Jan Havicksz. Steen"></option>
+            <option value="Vincent van Gogh"></option>
+            <option value="Potten"></option>
          </datalist>`
 }
