@@ -19,9 +19,6 @@ export function artists(data) {
     return result
 }
 
-let link = '';
-console.log()
-
 export function listJars(items) {
     const jars = items.artObjects.map(artObject => artObject)
     let result = '';
@@ -81,8 +78,4 @@ export function listFurniture(items) {
 
     return result;
     
-}
-
-export function artist(data) {
-    // Als data gelijk is aan de geklikte artiest dan worden alle kunstwerken van die artiest getoond
 }
