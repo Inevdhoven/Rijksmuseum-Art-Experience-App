@@ -3,7 +3,7 @@ import { search } from './search.js';
 import { artists, listJars, listFurniture } from './categories.js';
 import { displayLoader, hideLoader } from "./loader.js"
 import { hero, top10 } from "./home.js"
-import { details } from './details.js';
+import { details, showFullImage } from './details.js';
 import { artistOverview } from './overview.js';
 import { fetchData } from './data.js';
 
@@ -25,7 +25,7 @@ export function onRouteChanged(data) {
         },
         'artists': function() {
             routerView.innerHTML = 
-            `<section class="category">
+            `<section class="category artists">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Kunstenaars</h1>
                 <ul>
@@ -190,9 +190,8 @@ export function onRouteChanged(data) {
             const detailsData = details(result, objectNumber)
             
             routerView.innerHTML = 
-            `<section class="detail">
+            `<section class="details">
                 <a href="javascript: history.go(-1)">Terug</a>
-                <h1>Details</h1>
                 `+ detailsData +`
             </section>`
         },
