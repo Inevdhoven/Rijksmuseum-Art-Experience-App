@@ -118,7 +118,7 @@ main section section:first-of-type h1 {
 
 main section:first-of-type section:first-of-type img {
     height: 80vh;
-    
+
     object-fit: cover;
     position: absolute;
     inset: 0;
@@ -314,6 +314,13 @@ main section:first-of-type section:nth-of-type(3) ul li a {
 .category.artists ul li a {
     padding: 1.5rem;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    inset: 0;
+
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
@@ -371,14 +378,14 @@ main section:first-of-type section:nth-of-type(3) ul li a {
     inset: 0;
     z-index: 100;
 
-    visibility: hidden;
+    visibility: visible;
 
     background: var(--black);
 }
 
-.loader.display {
+/* .loader.display {
     visibility: visible;
-}
+} */
 
 /* Inspo css for loader from https://jsfiddle.net/L8ejy3cp/ */
 .loader svg {
@@ -409,7 +416,7 @@ main section:first-of-type section:nth-of-type(3) ul li a {
     
     background: var(--black);
 
-	animation: loader 3s ease-in-out alternate;
+	animation: loader 3s ease-in-out alternate infinite;
 }
 
 @keyframes loader {
