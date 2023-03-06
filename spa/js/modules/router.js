@@ -1,11 +1,12 @@
 import '../library/routie.js';
-import { search } from './search.js';
+import { search, getSearchData, displaySearchData } from './search.js';
 import { artists, listJars, listFurniture } from './categories.js';
 import { displayLoader, hideLoader } from "./loader.js"
 import { hero, top10 } from "./home.js"
 import { details, showFullImage } from './details.js';
 import { artistOverview } from './overview.js';
 import { fetchData } from './data.js';
+import { errorState } from './error.js';
 
 export function onRouteChanged(data) {
     const routerView = document.querySelector('main');
@@ -16,12 +17,21 @@ export function onRouteChanged(data) {
             hero(data) // data wordt doorgegeven aan de functie hero
             top10(data) // data wordt doorgegeven aan de functie top10
         },
-        'search': function() {
-            console.log('search')
+        'search': async function() {
+            
             routerView.innerHTML = 
             `<section class="search">
-                ` + search() + `
-            </section>`
+                ` + search() +`
+
+                <ul class="search-results"></ul>
+            </section>`;
+
+            const searchButton = document.querySelector('button')
+            
+            searchButton.addEventListener('click', () => {
+                getSearchData()
+            })
+            
         },
         'artists': function() {
             routerView.innerHTML = 
@@ -63,7 +73,7 @@ export function onRouteChanged(data) {
         'meubels': async function() {
             
             const result = await fetchData(null, null, 'meubels', null) 
-            const furnitureList = listFurniture(result);
+            const furnitureList = listFurniture(result)
 
             routerView.innerHTML = 
             `<section class="category">
@@ -86,18 +96,21 @@ export function onRouteChanged(data) {
             </section>`
         },
         'schilderij': async function() {
-            console.log('painting')
-
-            fetchData('schilderij')
+            const result = await fetchData('schilderij')
+            const paintingList = listPaintings(result)
 
             routerView.innerHTML = 
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Schilderijen</h1>
+                <ul>
+                    `+ paintingList +`
+                </ul>
             </section>`
         },
         'beeldhouwwerk': async function() {
-            console.log('sculptures')
+            const result = await fetchData(null, 'beeldhouwwerk')
+            const sculpturesList = listSculptures(result)
 
             fetchData('beeldhouwwerk')
 
@@ -105,75 +118,93 @@ export function onRouteChanged(data) {
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Beeldhouwwerk</h1>
+                <ul>
+                    `+ sculpturesList +`
+                </ul>
             </section>`
         },
         'porselein': async function() {
-            console.log('porcelain')
-
-            fetchData('porselein')
+            const result = await fetchData(null, 'porselein')
+            const porcelainList = listPorcelain(result)
 
             routerView.innerHTML = 
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Porselein</h1>
+                <ul>
+                    `+ porcelainList +`
+                </ul>
             </section>`
         },
         'hout': async function() {
-            console.log('wood')
-
-            fetchData('hout')
+            const result = await fetchData(null, 'hout')
+            const woodList = listWood(result)
 
             routerView.innerHTML = 
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Hout</h1>
+                <ul>
+                    `+ woodList +`
+                </ul>
             </section>`
         },
-        'olieverf': function() {
-            console.log('oilpaint')
-
-            fetchData('olieverf')
+        'olieverf': async function() {
+            const result = await fetchData(null, 'olieverf')
+            const oilpaintList = listOilpaint(result)
 
             routerView.innerHTML = 
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Olieverf</h1>
+                <ul>
+                    `+ oilpaintList +`
+                </ul>
             </section>`
         },
-        'goud': function() {
-            console.log('gold')
-
-            fetchData('goud')
+        'goud': async function() {
+            const result = await fetchData(null, 'goud')
+            const goldList = listGold(result)
 
             routerView.innerHTML = 
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Goud</h1>
+                <ul>
+                    `+ goldList +`
+                </ul>
             </section>`
         },
         'diamant': async function() {
-            console.log('diamond')
-
-            fetchData('diamant')
+            const result = await fetchData(null, 'diamant')
+            const diamondList = listDiamond(result)
 
             routerView.innerHTML = 
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Diamant</h1>
+                <ul>
+                    `+ diamondList +`
+                </ul>
             </section>`
         },
         'ijzer': async function() {
-            console.log('iron')
-
-            fetchData('ijzer')
+            const result = await fetchData(null, 'ijzer')
+            const ironList = listIron(result)
 
             routerView.innerHTML = 
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Ijzer</h1>
+                <ul>
+                    `+ ironList +`
+                </ul>
             </section>`
         },
         'papier': async function() {
+            const result = await fetchData(null, 'papier')
+            const paperList = listPaper(result)
+
             console.log('paper')
 
             fetchData('papier')
@@ -182,6 +213,9 @@ export function onRouteChanged(data) {
             `<section class="category">
                 <a href="javascript: history.go(-1)">Terug</a>
                 <h1>Papier</h1>
+                <ul>
+                    `+ paperList +`
+                </ul>
             </section>`
         },
         'details/:objectNumber': async function(objectNumber) {
@@ -195,7 +229,14 @@ export function onRouteChanged(data) {
                 `+ detailsData +`
             </section>`
         },
-        
+        '*': function () {
+            console.log('error handling');
+            routerView.innerHTML = 
+            `<section class="error">
+                `+ errorState() +`
+            </section>`
+        }
+         
     })
 }
 
