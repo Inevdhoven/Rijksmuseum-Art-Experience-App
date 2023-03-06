@@ -3,14 +3,11 @@ import { onRouteChanged } from "./modules/router.js"
 import { displayLoader, hideLoader } from "./modules/loader.js"
 import { hero, top10 } from "./modules/home.js"
 import { artists } from "./modules/categories.js"
+import { errorState } from "./modules/error.js"
 
 let globalData;
 
 // Eventlisteners
-// window.addEventListener('hashchange', function () {
-    // onRouteChanged(globalData); // De functie onRouteChanged wordt aangeroepen en de globalData wordt meegegeven
-// }, false);
-
 // Source for scroll: https://ryfarlane.com/article/get-scroll-position-vanilla-javascript
 window.addEventListener('scroll', function() {
     let scroll = window.scrollY; // De scroll positie wordt opgehaald
@@ -22,11 +19,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// window.addEventListener('hashchange', () => {
-//     if(location.hash === `#${link}`){
-//         console.log('HALLO')
-//     }
-// }, false)
 // emptyState()
 displayLoader(); // De loader wordt getoond
 
@@ -40,39 +32,16 @@ async function dataDisplay () {
 
         const data = await fetchData();
 
-        // console.log('HALLO');
-        // console.log(data);
-
         globalData = data;
-        // hideLoader() // De loader wordt verborgen
-        // hero(data) // data wordt doorgegeven aan de functie hero
-        // top10(data) // data wordt doorgegeven aan de functie top10
-            //artists(data) // data wordt doorgegeven aan de functie artists
-        // .then(data => {
-        //     console.log('DONE?');
-        //     console.log(data);
-        //     globalData = data;
-        //     hideLoader() // De loader wordt verborgen
-        //     hero(data) // data wordt doorgegeven aan de functie hero
-        //     top10(data) // data wordt doorgegeven aan de functie top10
-        //     //artists(data) // data wordt doorgegeven aan de functie artists
-        // })
         
         return data;
     // Error handling
     } catch (error) {
-        console.log(error);
+        console.log(error)
+        console.log('ERROR')
+        window.location.hash = "error"
+        errorState()
     }
 
 }
 
-// Logica
-
-    // .then(types => {
-    //     globalData = types;
-    //     console.log(types)
-    // })
-    // .then(materials => {
-    //     globalData = materials;
-    //     console.log(materials)
-    // })
