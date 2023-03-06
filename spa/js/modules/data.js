@@ -25,13 +25,17 @@ export async function fetchData(type, material, q, involvedMaker, objectNumber) 
 
     const response = await fetch(url);
 
-    if (response.ok ) {
+    if ( response.ok ) {
 
         let result = await response.json();
         result.apiArguments = args;
     
         return result;
     } else {
+        console.log(response);
         throw new Error('HTTP ERROR!!!')
+        console.log('HTTP ERROR!!!')
+        window.location.hash = "error"
+        errorState()
     }
 }
