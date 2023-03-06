@@ -20,9 +20,9 @@ export function artists(data) {
 }
 
 export function listJars(items) {
-    const jars = items.artObjects.map(artObject => artObject)
+    const jars = items.artObjects.map(artObject => artObject) // Haalt de artObjects uit de data en zet ze in een array
     let result = '';
-
+    
     const listJars = jars.map((jar) => {
         if(jar.hasImage !== false){
             return `
@@ -32,7 +32,6 @@ export function listJars(items) {
                     <img src="${jar.webImage.url}">
                 </a>
             </li>`
-
         } else {
             return ``
         }
