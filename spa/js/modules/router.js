@@ -39,9 +39,10 @@ export function onRouteChanged(data) {
         },
         'artists': function() {
             displayLoader()
+            // Tip van Maijla om javascript: history.go(-1) te gebruiken
             routerView.innerHTML = 
             `<section class="category artists">
-                <a href="javascript: history.go(-1)">Terug</a>
+                <a href="javascript: history.go(-1)">Terug</a> 
                 <h1>Kunstenaars</h1>
                 <ul>
                     `+ artists(data) +`
