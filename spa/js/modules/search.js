@@ -20,6 +20,10 @@ export function getSearchData() {
     const searchValue = input.value;
     const url = `${CONFIG.BASE_URL}?key=${CONFIG.API}&ps=100&q=${searchValue}`
 
+    console.log('value', searchValue)
+
+    console.log(url);
+
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -28,12 +32,13 @@ export function getSearchData() {
 
         artworks.map(artwork => {
             console.log(artwork)
-            console.log(displaySearchData(artwork))
             displaySearchData(artwork)
         })
         
     })
     .catch(error => {
+        console.log(url)
+        console.log(error);
         window.location.hash = "error"
         errorState()
     })
@@ -41,11 +46,6 @@ export function getSearchData() {
 
 export function displaySearchData(artwork) {
     const searchResults = document.querySelector('.search-results')
-    const searchResultsListItems = document.querySelectorAll('.search-results li')
-
-    // searchResultsListItems.forEach(searchResultsListItem => {
-    //     searchResultsListItem.remove()
-    // })
 
     const searchResult = document.createElement('li')
     const searchResultLink = document.createElement('a')
@@ -54,7 +54,7 @@ export function displaySearchData(artwork) {
 
     searchResultLink.href = `/web-app-from-scratch-2223/spa/#details/${artwork.objectNumber}`
     searchResultTitle.textContent = artwork.title
-    searchResultImage.src = artwork.webImage.url
+    searchResultImage.src = artwork.webImage?.url || 'https://via.placeholder.com/150'
     searchResultImage.alt = artwork.title
 
     searchResult.appendChild(searchResultLink)
