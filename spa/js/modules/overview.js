@@ -7,9 +7,7 @@ export function artistOverview(artist) {
 
 
     const listArtWork = artWork.map((art) => {
-        console.log(art)
         if(art.hasImage !== false){
-            console.log('test')
             return `
             <li>
                 <a href="#details/${art.objectNumber}">
