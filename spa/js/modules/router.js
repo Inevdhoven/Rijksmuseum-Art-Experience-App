@@ -3,7 +3,7 @@ import { search, getSearchData, displaySearchData } from './search.js';
 import { artists, listJars, listFurniture, listPhotos, listPaintings, listSculptures, listPorcelain, listWood, listOilpaintings, listGold, listDiamonds, listIron, listPapers } from './categories.js';
 import { displayLoader, hideLoader } from "./loader.js"
 import { hero, top10 } from "./home.js"
-import { details } from './details.js';
+import { details, showFullImage } from './details.js';
 import { artistOverview } from './overview.js';
 import { fetchData } from './data.js';
 import { errorState } from './error.js';
@@ -284,6 +284,8 @@ export function onRouteChanged(data) {
                 <a href="javascript: history.go(-1)">Terug</a>
                 `+ detailsData +`
             </section>`
+
+            showFullImage(result, objectNumber)
 
             hideLoader()
         },
