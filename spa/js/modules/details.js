@@ -6,11 +6,11 @@ export function details(item) {
                 <h1>${artWork.title}</h1>
                 <p>${artWork.description}</p>
             </div>
-            <img src="${artWork.webImage.url}"/>`;
+            <img src="${artWork.webImage?.url || 'https://via.placeholder.com/150'}"/>`;
 }
 
 export function showFullImage(item) {
-    const artWorkImage = item.artObject.webImage.url;
+    const artWorkImage = item.artObject.webImage?.url || 'https://via.placeholder.com/150'
 
     artWorkImage.addEventListener('click', () => {
         const fullImage = document.createElement('img');
