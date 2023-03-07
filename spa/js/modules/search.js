@@ -52,7 +52,7 @@ export function displaySearchData(artwork) {
     const searchResultTitle = document.createElement('h2')
     const searchResultImage = document.createElement('img')
 
-    searchResultLink.href = `/#details/${artwork.objectNumber}`
+    searchResultLink.href = `/web-app-from-scratch-2223/spa/#details/${artwork.objectNumber}`
     searchResultTitle.textContent = artwork.title
     searchResultImage.src = artwork.webImage.url
     searchResultImage.alt = artwork.title
