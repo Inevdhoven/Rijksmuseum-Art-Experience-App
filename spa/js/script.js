@@ -35,6 +35,7 @@ async function dataDisplay () {
         globalData = data;
         
         return data;
+        
     // Error handling
     } catch (error) {
         console.log(error)
