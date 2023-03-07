@@ -11,7 +11,7 @@ export function search() {
                 <option value="Jan Havicksz. Steen"></option>
                 <option value="Vincent van Gogh"></option>
             </datalist>
-            <button type="submit">Zoeken</button>`
+            <button type="submit"></button>`
     
 }
 
@@ -27,24 +27,30 @@ export function getSearchData() {
         const artworks = data.artObjects;
 
         artworks.map(artwork => {
-            // console.log(artwork)
-
+            console.log(artwork)
+            console.log(displaySearchData(artwork))
             displaySearchData(artwork)
         })
         
     })
     .catch(error => {
-        console.log(error)
+        window.location.hash = "error"
+        errorState()
     })
 }
 
 export function displaySearchData(artwork) {
     const searchResults = document.querySelector('.search-results')
+    const searchResultsListItems = document.querySelectorAll('.search-results li')
+
+    // searchResultsListItems.forEach(searchResultsListItem => {
+    //     searchResultsListItem.remove()
+    // })
+
     const searchResult = document.createElement('li')
     const searchResultLink = document.createElement('a')
     const searchResultTitle = document.createElement('h2')
     const searchResultImage = document.createElement('img')
-
 
     searchResultLink.href = `/#details/${artwork.objectNumber}`
     searchResultTitle.textContent = artwork.title
