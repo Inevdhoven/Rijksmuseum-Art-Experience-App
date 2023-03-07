@@ -41,19 +41,19 @@ cardCasper.addEventListener("click", function() {
 })
 
 cardIne.addEventListener("click", function() {
-    back.src = "https://inevdhoven.github.io/web-app-from-scratch-2223/visitekaartje/"
+    back.src = "https://inevdhoven.github.io/Rijksmuseum-Art-Experience-App/visitekaartje/"
     front.classList.add('flip')
     back.classList.add('back')
 })
 
 cardJeffrey.addEventListener("click", function() {
-    back.src = "https://gekkeboyjeff.github.io/web-app-from-scratch-2223/visitekaartje/"
+    back.src = "https://gekkeboyjeff.github.io/Rijksmuseum-Art-Experience-App/visitekaartje/"
     front.classList.add('flip')
     back.classList.add('back')
 })
 
 cardHilal.addEventListener("click", function() {
-    back.src = "https://hilal-tapan.github.io/web-app-from-scratch-2223/visitekaartje/"
+    back.src = "https://hilal-tapan.github.io/Rijksmuseum-Art-Experience-App/visitekaartje/"
     front.classList.add('flip')
     back.classList.add('back')
 })
