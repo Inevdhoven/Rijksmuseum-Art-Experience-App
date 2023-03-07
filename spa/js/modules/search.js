@@ -30,6 +30,12 @@ export function getSearchData() {
 
         const artworks = data.artObjects;
 
+        const liElements = document.querySelectorAll('.search-results li')
+
+        liElements.forEach(li => {
+            li.remove(li)
+        })
+
         artworks.map(artwork => {
             console.log(artwork)
             displaySearchData(artwork)
