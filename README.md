@@ -1,12 +1,19 @@
 # Rijksmuseum Art Experience
 
-De Rijksmuseum Art Experience is een webapp waar je allemaal verschillende soorten kunst kan bekijken.
+De Rijksmuseum Art Experience is een webapp waar je allemaal verschillende soorten kunst kunt bekijken. Zo kun je op de homepage de top 10 kunstwerken bekijken. Verder kun je ook op onderwerp zoeken en zoeken naar een specifiek kunstwerk. Wanneer je op een kunstwerk klikt, kom je op een detailpagina waar je meer informatie over het kunstwerk kunt lezen.
 
-_Alle projecten in deze map zijn gedurende de Minor Web Design & Development gemaakt._
+_Alle projecten in deze map zijn gedurende de Minor Web Design & Development gemaakt voor het vak Web App From Scratch._
 
-(Hier komt een afbeelding van mijn Web App)
+![Visual Rijksmuseum Art Experience App](./images/webapp.png)
 
 ## Inhoud
+
+- [Mijn GitHub Pages](#mijn-github-pages)
+- [Mijn proces](#mijn-proces)
+- [Hoe installeer je de Rijksmuseum Art Experience](#hoe-installeer-je-de-rijksmuseum-art-experience)
+- [Hoe gebruik je de Rijksmuseum Art Experience](#hoe-gebruik-je-de-rijksmuseum-art-experience)
+- [To Do](#to-do)
+- [License](#license)
 
 ## Mijn GitHub Pages
 
@@ -24,13 +31,15 @@ Mijn hele proces kun je [hier](https://smooth-freeze-4ae.notion.site/Web-App-Fro
 
 ### Rijksmuseum API: RijksData
 
-Voor deze webapp heb ik gebruik gemaakt van de Rijksmuseum API. Deze API bevat alle informatie over de kunstwerken die in het Rijksmuseum hangen. De API bevat informatie over de kunstwerken, de kunstenaars en de collecties.
+Voor deze webapp heb ik gebruik gemaakt van de Rijksmuseum API. Deze API bevat alle informatie over de kunstwerken die in het Rijksmuseum hangen. De API bevat informatie over de kunstwerken en de kunstenaars.
 
 ### Hoe werkt de Rijksmuseum API: RijksData
 
-De Rijksdata api is een RESTful API. Dit betekent dat de API data teruggeeft in JSON formaat. De API heeft een aantal endpoints. De endpoints zijn: `collection`, `search`, `object`, `collection/{id}`, `collection/{id}/object`, `collection/{id}/object/{id}`.
+De Rijksdata api is een RESTful API. Dit betekent dat de API data teruggeeft in JSON formaat. Je kunt op veel verschillende manier data opvragen. Je kunt bijvoorbeeld een specifiek kunstwerk ophalen of kunstwerken uit een specifiek onderwerp.
 
 Je kan de data ophalen doormiddel van een `FETCH`, deze kun je terugvinden in het bestand `data.js` in het mapje `spa/js/modules`.
+
+Om meer te weten over de Rijks Data API kun je [hier](https://data.rijksmuseum.nl/object-metadata/api/) meer lezen.
 
 ## To Do:
 
@@ -40,15 +49,14 @@ In de issues kun je de punten vinden waar ik nog naar moet kijken. [Klik hier](h
 
 Deze Single Page App maakt gebruik van een MIT License. Je kunt meer lezen over de MIT License [hier](https://github.com/Inevdhoven/web-app-from-scratch-2223/blob/main/LICENSE).
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+## Credits
 
-<!-- ☝️ replace this description with a description of your own work -->
+Ik wil graag de volgende mensen bedanken voor hun hulp:
+
+- De docenten van het vak Web App From Scratch
+- Mijn medestudenten
 
 <!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
-
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Maybe a table of contents here? 📚 -->
 
 <!-- How about a section that describes how to install this project? 🤓 -->
 
