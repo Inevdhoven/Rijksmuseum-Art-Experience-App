@@ -6,17 +6,15 @@ export function displayLoader() {
     main.classList.add('hide')
     header.classList.add('hide')
     loader.classList.remove('hide')
-    // setTimeout(() => {
-    //     loader.classList.remove("display");
-    // }, 200); // to stop loading after some time
 }
 
 export function hideLoader() {
-    const header = document.querySelector('header')
-    const main = document.querySelector('main')
-    const loader = document.querySelector('.loader')
-    loader.classList.add('hide')
-    main.classList.remove('hide')
-    header.classList.remove('hide')
+    setTimeout(() => {
+        const header = document.querySelector('header')
+        const main = document.querySelector('main')
+        const loader = document.querySelector('.loader')
+        loader.classList.add('hide')
+        main.classList.remove('hide')
+        header.classList.remove('hide')
+    }, 200); // to stop loading after some time
 }
-
