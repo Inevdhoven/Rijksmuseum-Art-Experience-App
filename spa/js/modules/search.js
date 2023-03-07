@@ -20,10 +20,6 @@ export function getSearchData() {
     const searchValue = input.value;
     const url = `${CONFIG.BASE_URL}?key=${CONFIG.API}&ps=100&q=${searchValue}`
 
-    console.log('value', searchValue)
-
-    console.log(url);
-
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -33,13 +29,19 @@ export function getSearchData() {
         const liElements = document.querySelectorAll('.search-results li')
 
         liElements.forEach(li => {
-            li.remove(li)
+            li.remove(li) // Verwijderd alle li elementen
         })
 
-        artworks.map(artwork => {
-            console.log(artwork)
-            displaySearchData(artwork)
-        })
+        if (artworks.length === 0) { // Als er geen resultaten zijn
+            const searchResults = document.querySelector('.search-results')
+            const noResults = document.createElement('li')
+            noResults.textContent = 'Geen resultaten gevonden'
+            searchResults.appendChild(noResults)
+        } else { // Als er wel resultaten zijn
+            artworks.map(artwork => {
+                displaySearchData(artwork)
+            })
+        }
         
     })
     .catch(error => {
@@ -58,7 +60,7 @@ export function displaySearchData(artwork) {
     const searchResultTitle = document.createElement('h2')
     const searchResultImage = document.createElement('img')
 
-    searchResultLink.href = `/web-app-from-scratch-2223/spa/#details/${artwork.objectNumber}`
+    searchResultLink.href = `/Rijksmuseum-Art-Experience-App/spa/#details/${artwork.objectNumber}`
     searchResultTitle.textContent = artwork.title
     searchResultImage.src = artwork.webImage?.url || 'https://via.placeholder.com/150'
     searchResultImage.alt = artwork.title
