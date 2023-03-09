@@ -14,7 +14,7 @@ export function details(item) {
                 <h1>${artWork.title}</h1>
                 <p>${artWork.description}</p>
             </div>
-            <img src="${artWork.webImage?.url || 'https://via.placeholder.com/150'}"/>`;
+            <img src="${artWork.webImage?.url || './images/placeholder.png'}"/>`;
 }
 
 export function showFullImage(item) {
@@ -27,15 +27,12 @@ export function showFullImage(item) {
         detailsSection.classList.toggle('showfullimage')
         
         if (fullScreenImageBtn.classList.contains('show')) {
-            console.log('show')
             const imgFull = document.createElement('img')
-            console.log(imgFull)
-            imgFull.src = artWork.webImage?.url || 'https://via.placeholder.com/150'
+            imgFull.src = artWork.webImage?.url || './images/placeholder.png'
             imgFull.alt = artWork.title
             imgFull.classList.add('full-image')
             detailsSection.appendChild(imgFull)
         } else {
-            console.log('hide')
             const img = document.querySelector(".full-image")
             img.remove(img)
         }
