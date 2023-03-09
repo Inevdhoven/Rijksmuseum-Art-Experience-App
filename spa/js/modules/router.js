@@ -39,7 +39,7 @@ export function onRouteChanged(data) {
         },
         'artists': function() {
             displayLoader()
-            // Tip van Maijla om javascript: history.go(-1) te gebruiken
+            // Tip van Maijla om javascript: history.go(-1) te gebruiken om een pagina terug te gaan
             routerView.innerHTML = 
             `<section class="category artists">
                 <a href="javascript: history.go(-1)">Terug</a> 
