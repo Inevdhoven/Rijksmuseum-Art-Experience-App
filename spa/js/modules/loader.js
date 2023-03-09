@@ -18,3 +18,20 @@ export function hideLoader() {
         header.classList.remove('hide')
     }, 200); // to stop loading after some time
 }
+
+export function searchLoaderShow() {
+    const searchResults = document.querySelector('.search-results')
+
+    searchResults.classList.add('loading')
+
+    searchResults.insertAdjacentHTML('beforebegin', `<div class="search-loader">Aan het zoeken...</div>`) // Source: https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML for beforebegin
+}
+
+export function searchLoaderHide() {
+    setTimeout(() => {
+        const searchLoader = document.querySelector('.search-loader')
+        const searchResults = document.querySelector('.search-results')
+        searchLoader.remove(searchLoader)
+        searchResults.classList.remove('loading')
+    }, 200); // to stop loading after some time
+}
