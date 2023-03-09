@@ -71,6 +71,32 @@ Om meer te weten over de Rijks Data API kun je [hier](https://data.rijksmuseum.n
 
 In de issues kun je de punten vinden waar ik nog naar moet kijken. [Klik hier](https://github.com/Inevdhoven/web-app-from-scratch-2223/issues) om naar issues te gaan.
 
+| To Do                                                    | Status             |
+| -------------------------------------------------------- | ------------------ |
+| Homepage                                                 | :white_check_mark: |
+| Top stukken ophalen                                      | :white_check_mark: |
+| Op onderwerp zoeken                                      | :white_check_mark: |
+| Onderwerp in slider inladen                              | :white_check_mark: |
+| Zoek functie                                             | :white_check_mark: |
+| Detailpagina                                             | :white_check_mark: |
+| UI-Stack toevoegen                                       | :white_check_mark: |
+| Readme schrijven                                         | :white_check_mark: |
+| Hashing/routie toevoegen                                 | :white_check_mark: |
+| Code in modules zetten                                   | :white_check_mark: |
+| Optie om gehele image te bekijken toevoegen              | :white_check_mark: |
+| Niet gebruikte documenten verwijderen                    | :white_check_mark: |
+| Contrast verbeteren detailspagina                        | :white_check_mark: |
+| Placeholder image aanpassen                              | :white_check_mark: |
+| dvh inplaats van vh gebruiken                            | :white_check_mark: |
+| Loading state toevoegen aan zoeken                       | :white_check_mark: |
+| Zoeken met klik op enter                                 | :white_check_mark: |
+| Zero state toevoegen                                     | :white_check_mark: |
+| Filter() en Reduce() toevoegen                           |                    |
+| Zoek icoontje in header aanpassen wanneer aan het zoeken |                    |
+| Progressive disclosure toepassen bij de detailpagina     |                    |
+| Afbeeldingen kleiner maken                               |                    |
+| Gerelateerde kunstwerken toevoegen aan detailpagina      |                    |
+
 ## License
 
 Deze Single Page App maakt gebruik van een MIT License. Je kunt meer lezen over de MIT License [hier](https://github.com/Inevdhoven/Rijksmuseum-Art-Experience-App/blob/main/LICENSE).
