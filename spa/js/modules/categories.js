@@ -128,8 +128,6 @@ export function listPaintings(items) {
 
 export function listSculptures(items) {
     const sculptures = items.artObjects.map(artObject => artObject)
-   
-console.log(sculptures)
 
     let result = '';
 

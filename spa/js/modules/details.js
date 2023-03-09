@@ -22,8 +22,6 @@ export function showFullImage(item) {
     const fullScreenImageBtn = document.querySelector('.details button')
     const artWork = item.artObject;
 
-    console.log(item)
-
     fullScreenImageBtn.addEventListener('click', () => {
         fullScreenImageBtn.classList.toggle('show')
         detailsSection.classList.toggle('showfullimage')

@@ -2,9 +2,6 @@ export function artistOverview(artist) {
     const artWork = artist.artObjects.map(artObject => artObject)
 
     let result = ''
-    console.log(artWork)
-
-
 
     const listArtWork = artWork.map((art) => {
         if(art.hasImage !== false){

@@ -34,7 +34,6 @@ export async function fetchData(type, material, q, involvedMaker, objectNumber) 
     } else {
         // console.log(response);
         throw new Error('HTTP ERROR!!!')
-        // console.log('HTTP ERROR!!!')
         window.location.hash = "error"
         errorState()
     }
