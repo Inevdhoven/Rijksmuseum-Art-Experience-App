@@ -30,7 +30,14 @@ export function onRouteChanged(data) {
             </section>`;
 
             const searchButton = document.querySelector('button')
-            
+
+            // Source: https://www.techiedelight.com/detect-enter-key-press-javascript/
+            document.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    getSearchData()
+                }
+            });
+
             searchButton.addEventListener('click', () => {
                 getSearchData()
             })
